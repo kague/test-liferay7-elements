@@ -1,4 +1,4 @@
-const config = require('./e2e/protractor.conf').config;
+const config = require('./protractor.conf').config;
 
 config.capabilities = {
   browserName: 'chrome',
