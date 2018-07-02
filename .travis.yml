@@ -22,9 +22,9 @@ install:
 script:
   # Use Chromium instead of Chrome.
   - export CHROME_BIN=chromium-browser
-  - xvfb-run -a npm run test:cover -- --watch=false --no-progress --browsers=ChromeHeadless
-  - xvfb-run -a npm run test -- --watch=false --no-progress --browsers=ChromeHeadless
-  - xvfb-run -a npm run e2e -- --protractor-config=protractor.conf.js
-
+  - xvfb-run -a npm run test:cover -- --watch=false --no-progress --browser=ChromeNoSandbox
+  - xvfb-run -a npm run test -- --single-run --no-progress --browser=ChromeNoSandbox
+  - xvfb-run -a npm run e2e -- --no-progress --config=protractor-ci.conf.js
+  
 after_sucess:
   - npm run coveralls
