@@ -1,3 +1,6 @@
+[![Coverage Status](https://coveralls.io/repos/github/kague/angular-test/badge.svg?branch=master)](https://coveralls.io/github/kague/angular-test?branch=master)
+[![Build Status](https://travis-ci.org/kague/angular-test.svg?branch=master)](https://travis-ci.org/kague/angular-test)
+
 # AngularTest
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
