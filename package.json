@@ -11,7 +11,7 @@
     "precommit": "npm run commitlint && npm run lint",
     "commitlint": "commitlint -e",
     "test:cover": "rm -rf ./coverage && ng test --no-watch --code-coverage",
-    "coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
+    "coveralls": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls --verbose"
   },
   "private": true,
   "dependencies": {
