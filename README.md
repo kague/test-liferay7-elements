@@ -66,10 +66,18 @@ fix des problème de version/securite aprs la generation du projet.
 ```
 npm audit fix --force
 ```
-Regler le problème de vulnérabilite dans le fichier package-lock.json. Supression des anciennes version de "braces" et installation de la dernière version + maj des références de version :
+Installation de la dernière version "braces":
 ```
 npm install --save braces
 ```
+Regler le problème de vulnérabilite dans le fichier package-lock.json. 
+Supression des anciennes version de "braces" faisant partie de "dependancy".
+
+Installation de angular material 
+```
+npm i --save @angular/material @angular/cdk hammerjs material-design-icons @angular/flex-layout
+```
+
 
 # Utilisation 
 ## Development server
@@ -79,6 +87,7 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 ## Code scaffolding
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Creation des composants dans des sous dossier : `ng g c path/component-name`, avec un "path" d'une profondeur étendue.
 
 ## Build
 
@@ -123,3 +132,16 @@ npm install nodeunit jscoverage coveralls --save-dev
 [![Known Vulnerabilities](https://snyk.io/test/github/kague/angular-test/badge.svg?targetFile=package.json)](https://snyk.io/test/github/kague/angular-test?targetFile=package.json)
 
 Snyk: https://snyk.io
+
+## Github Page
+Page Public du projet.
+
+## FireBase
+Backend du projet
+Site : http://firebase.google.com
+```
+npm i --save firebase
+```
+
+## Plugins Chrome
+Augury : Debuggage spécifique Chrome.

@@ -9,20 +9,26 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "test:cover": "rm -rf ./coverage && ng test --no-watch --code-coverage",
-    "coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
+    "coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
+    "build:gh-pages:demo1": "ng build --configuration=demo1 --outputPath=gh-pages/demo1 --baseHref=/angular-test/demo1/"
   },
   "private": true,
   "dependencies": {
     "@angular/animations": "~7.2.5",
+    "@angular/cdk": "^7.3.2",
     "@angular/common": "~7.2.5",
     "@angular/compiler": "~7.2.5",
     "@angular/core": "~7.2.5",
+    "@angular/flex-layout": "^7.0.0-beta.23",
     "@angular/forms": "~7.2.5",
+    "@angular/material": "^7.3.2",
     "@angular/platform-browser": "~7.2.5",
     "@angular/platform-browser-dynamic": "~7.2.5",
     "@angular/router": "~7.2.5",
     "braces": "^2.3.2",
     "core-js": "^2.6.5",
+    "hammerjs": "^2.0.8",
+    "material-design-icons": "^3.0.1",
     "rxjs": "~6.4.0",
     "tslib": "^1.9.3",
     "zone.js": "~0.8.29"
