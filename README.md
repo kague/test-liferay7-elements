@@ -135,6 +135,7 @@ Snyk: https://snyk.io
 
 ## Github Page
 Page Public du projet.
+Voir la page : http://kague.github.io/angular-test
 
 ## FireBase
 Backend du projet

@@ -9,7 +9,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "test:cover": "rm -rf ./coverage && ng test --no-watch --code-coverage",
-    "coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
+    "coveralls": "cat ./coverage/angular-test/lcov.info | ./node_modules/coveralls/bin/coveralls.js --verbose",
     "build:gh-pages:demo1": "ng build --configuration=demo1 --outputPath=gh-pages/demo1 --baseHref=/angular-test/demo1/"
   },
   "private": true,
