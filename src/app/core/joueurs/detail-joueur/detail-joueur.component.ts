@@ -11,8 +11,7 @@ import { JoueurService } from '../joueur/joueur.service';
   styleUrls: ['./detail-joueur.component.scss']
 })
 export class DetailJoueurComponent implements OnInit {
-
-  @Input() joueur: Joueur;
+  @Input() joueur: Joueur = new Joueur();
 
   constructor(
     private route: ActivatedRoute,
@@ -26,17 +25,10 @@ export class DetailJoueurComponent implements OnInit {
 
   getJoueur(): void {
     const id = +this.route.snapshot.paramMap.get('id');
-    this.joueurService
-      .getJoueur(id)
-      .subscribe(j => (this.joueur = j));
+    this.joueurService.getJoueur(id).subscribe(j => (this.joueur = j));
   }
 
   goBack(): void {
     this.location.back();
   }
-
-  save(): void {
-    this.joueurService.update(this.joueur).subscribe(() => this.goBack());
-  }
-
 }

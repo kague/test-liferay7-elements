@@ -1,0 +1,22 @@
+<h2>Liste des Equipes</h2>
+
+<table matSort (matSortChange)="sortData($event)">
+    <tr>
+      <th></th>
+      <th mat-sort-header="nom">Equipe</th>
+      <th>Action</th>
+    </tr>
+    <tr *ngFor="let equipe of equipes;">
+      <td></td>
+      <td class="equipe">
+          <a routerLink="/equipe/{{ equipe.id }}">
+            {{equipe.nom}}
+            </a>
+            </td>
+      <td>
+          <button mat-icon-button title="supprime" (click)="delete(equipe)">
+              <mat-icon>delete</mat-icon>
+            </button>
+      </td>
+    </tr>
+</table>

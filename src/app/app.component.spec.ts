@@ -1,18 +1,21 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClientModule } from '@angular/common/http';
 import { CustomMaterialModuleModule } from './modules/custom-material-module/custom-material-module.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { HomeComponent } from './core/home/home.component';
 import { ListJoueursComponent } from './core/joueurs/list-joueurs/list-joueurs.component';
 import { SearchJoueursComponent } from './core/joueurs/search-joueurs/search-joueurs.component';
-import { JoueurService } from './core/joueurs/joueur/joueur.service';
 import { DetailJoueurComponent } from './core/joueurs/detail-joueur/detail-joueur.component';
+import { FormJoueurComponent } from './core/joueurs/form-joueur/form-joueur.component';
+import { ListEquipesComponent } from './core/equipes/list-equipes/list-equipes.component';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -21,8 +24,10 @@ describe('AppComponent', () => {
         AppComponent,
         HomeComponent,
         ListJoueursComponent,
+        FormJoueurComponent,
         SearchJoueursComponent,
-        DetailJoueurComponent
+        DetailJoueurComponent,
+        ListEquipesComponent
       ],
       imports: [
         BrowserModule,
@@ -30,9 +35,12 @@ describe('AppComponent', () => {
         AppRoutingModule,
         RouterTestingModule.withRoutes([]),
         HttpClientModule,
-        CustomMaterialModuleModule
+        BrowserAnimationsModule,
+        CustomMaterialModuleModule,
+        ReactiveFormsModule
       ],
-      providers: [JoueurService]
+      providers: [],
+      schemas: [NO_ERRORS_SCHEMA]
     }).compileComponents();
   }));
 

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+
 import { Joueur } from '../joueur/joueur';
 import { JoueurService } from '../joueur/joueur.service';
+
 import { Sort } from '@angular/material';
 
 @Component({

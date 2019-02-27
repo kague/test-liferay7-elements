@@ -5,13 +5,13 @@ import { of } from 'rxjs';
 
 import { HttpClientModule } from '@angular/common/http';
 import { RouterTestingModule } from '@angular/router/testing';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CustomMaterialModuleModule } from 'src/app/modules/custom-material-module/custom-material-module.module';
 
+import { AppComponent } from 'src/app/app.component';
 import { ListJoueursComponent } from './list-joueurs.component';
 import { SearchJoueursComponent } from '../search-joueurs/search-joueurs.component';
-import { AppComponent } from 'src/app/app.component';
 import { DetailJoueurComponent } from '../detail-joueur/detail-joueur.component';
 
 import { JoueurService } from '../joueur/joueur.service';
@@ -44,7 +44,8 @@ describe('ListJoueursComponent', () => {
         RouterTestingModule.withRoutes([]),
         HttpClientModule,
         BrowserAnimationsModule,
-        CustomMaterialModuleModule
+        CustomMaterialModuleModule,
+        ReactiveFormsModule
       ],
       providers: [{ provide: JoueurService, useValue: spyJoueurService }],
       schemas: [NO_ERRORS_SCHEMA]
@@ -58,7 +59,7 @@ describe('ListJoueursComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should have a defined component', () => {
+  it('doit avoir definit le composant', () => {
     expect(component).toBeDefined();
   });
 

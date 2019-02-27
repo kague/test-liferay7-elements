@@ -29,8 +29,8 @@ describe('JoueurService core', () => {
     it('doit retourner un Observable<Joueur[]>', () => {
       // valeurs de mock
       const dummyJoueurs = [
-        { id: 0, surnom: 'John' },
-        { id: 1, surnom: 'Doe' }
+        { id: 0, surnom: 'John', equipes: [] },
+        { id: 1, surnom: 'Doe', equipes: [] }
       ];
       // Check de l'attendu
       service.getJoueurs().subscribe(j => {
@@ -48,7 +48,7 @@ describe('JoueurService core', () => {
   describe('#getJoueur', () => {
     it('doit retourner un Observable<Joueur>', () => {
       // valeurs de mock
-      const joueur0 = { id: 0, surnom: 'John' };
+      const joueur0 = { id: 0, surnom: 'John', equipes: [] };
       // Check de l'attendu
       service.getJoueur(0).subscribe(resultat => {
         expect(resultat.id).toBe(0);

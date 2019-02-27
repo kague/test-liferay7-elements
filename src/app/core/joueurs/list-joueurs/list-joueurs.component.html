@@ -1,6 +1,12 @@
 <h2>Liste des Joueurs</h2>
 <app-search-joueurs></app-search-joueurs>
 
+<div>
+  <a routerLink="/joueurs/new" title="Nouveau Joueur">
+    <mat-icon>fiber_new</mat-icon>
+  </a>
+</div>
+
 <table matSort (matSortChange)="sortData($event)">
   <tr>
     <th></th>
@@ -10,10 +16,7 @@
 
   <tr *ngFor="let joueur of joueurs; trackBy: trackByFn">
     <td>
-      <span
-        matBadge="{{ joueur.id }}"
-        matBadgeColor="accent"
-      ></span>
+      <span matBadge="{{ joueur.id }}" matBadgeColor="accent"></span>
     </td>
     <td class="joueur">
       <a routerLink="/joueurs/{{ joueur.id }}">
@@ -27,10 +30,3 @@
     </td>
   </tr>
 </table>
-
-<div>
-  <label>Joueur <input #surnomJoueur/></label>
-  <button (click)="add(surnomJoueur.value); surnomJoueur.value = ''">
-    Ajout
-  </button>
-</div>

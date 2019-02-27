@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
-import { Joueur } from './joueur';
 import { Observable, of, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+
 import { IJoueurService } from './ijoueur.service';
+import { Joueur } from './joueur';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -28,15 +29,15 @@ export class JoueurService extends IJoueurService {
     return this.http.get<Joueur>(urlDetail).pipe(catchError(this.handleError));
   }
 
-  update(joueur: Joueur): Observable<any> {
-    return this.http
-      .put(this.joueurUrl, joueur, httpOptions)
-      .pipe(catchError(this.handleError));
-  }
-
   add(joueur: Joueur): Observable<Joueur> {
     return this.http
       .post<Joueur>(this.joueurUrl, joueur, httpOptions)
+      .pipe(catchError(this.handleError));
+  }
+
+  update(joueur: Joueur): Observable<any> {
+    return this.http
+      .put(this.joueurUrl, joueur, httpOptions)
       .pipe(catchError(this.handleError));
   }
 

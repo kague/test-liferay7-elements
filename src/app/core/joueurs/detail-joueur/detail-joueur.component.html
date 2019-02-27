@@ -1,8 +1,14 @@
 <h2>Details</h2>
 <div>
-  <label>name:
-    <input [(ngModel)]="joueur.surnom" placeholder="surnom">
-  </label>
+  {{ joueur.surnom }}
+</div>
+
+<div>
+  <h3>Equipes</h3>
+  <mat-list *ngIf="joueur.equipes" class="list-equipe" role="list">
+    <mat-list-item role="listitem" class="equipe" *ngFor="let equipe of joueur.equipes">
+      {{ equipe.nom }}
+    </mat-list-item>
+  </mat-list>
 </div>
 <button (click)="goBack()">retour</button>
-<button (click)="save()">save</button>
