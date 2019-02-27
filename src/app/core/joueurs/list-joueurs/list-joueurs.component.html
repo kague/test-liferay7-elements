@@ -1,0 +1,36 @@
+<h2>Liste des Joueurs</h2>
+<app-search-joueurs></app-search-joueurs>
+
+<table matSort (matSortChange)="sortData($event)">
+  <tr>
+    <th></th>
+    <th mat-sort-header="surnom">Joueur</th>
+    <th>Action</th>
+  </tr>
+
+  <tr *ngFor="let joueur of joueurs; trackBy: trackByFn">
+    <td>
+      <span
+        matBadge="{{ joueur.id }}"
+        matBadgeColor="accent"
+      ></span>
+    </td>
+    <td class="joueur">
+      <a routerLink="/joueurs/{{ joueur.id }}">
+        {{ joueur.surnom }}
+      </a>
+    </td>
+    <td>
+      <button mat-icon-button title="supprime" (click)="delete(joueur)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </td>
+  </tr>
+</table>
+
+<div>
+  <label>Joueur <input #surnomJoueur/></label>
+  <button (click)="add(surnomJoueur.value); surnomJoueur.value = ''">
+    Ajout
+  </button>
+</div>

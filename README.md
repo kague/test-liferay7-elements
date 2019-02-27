@@ -71,11 +71,16 @@ Installation de la dernière version "braces":
 npm install --save braces
 ```
 Regler le problème de vulnérabilite dans le fichier package-lock.json. 
-Supression des anciennes version de "braces" faisant partie de "dependancy".
+Supression des anciennes version de "braces" faisant partie de la partie "dependancy" de certains packages.
 
 Installation de angular material 
 ```
 npm i --save @angular/material @angular/cdk hammerjs material-design-icons @angular/flex-layout
+```
+
+Ajout de la bibliotheque de test in-memory des appels http
+```
+npm i --save angular-in-memory-web-api
 ```
 
 

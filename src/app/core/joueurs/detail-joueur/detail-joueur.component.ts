@@ -1,15 +1,17 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Joueur } from './joueur';
 import { ActivatedRoute } from '@angular/router';
-import { JoueurService } from '../joueur.service';
 import { Location } from '@angular/common';
 
+import { Joueur } from '../joueur/joueur';
+import { JoueurService } from '../joueur/joueur.service';
+
 @Component({
-  selector: 'app-joueur',
-  templateUrl: './joueur.component.html',
-  styleUrls: ['./joueur.component.scss']
+  selector: 'app-detail-joueur',
+  templateUrl: './detail-joueur.component.html',
+  styleUrls: ['./detail-joueur.component.scss']
 })
-export class JoueurComponent implements OnInit {
+export class DetailJoueurComponent implements OnInit {
+
   @Input() joueur: Joueur;
 
   constructor(
@@ -26,10 +28,15 @@ export class JoueurComponent implements OnInit {
     const id = +this.route.snapshot.paramMap.get('id');
     this.joueurService
       .getJoueur(id)
-      .subscribe(joueur => (this.joueur = joueur));
+      .subscribe(j => (this.joueur = j));
   }
 
-  goBack() {
+  goBack(): void {
     this.location.back();
   }
+
+  save(): void {
+    this.joueurService.update(this.joueur).subscribe(() => this.goBack());
+  }
+
 }

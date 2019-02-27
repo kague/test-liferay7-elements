@@ -1,8 +1,0 @@
-<h2>Liste des Joueurs</h2>
-<ul>
-  <li *ngFor="let joueur of joueurs">
-    <a routerLink="/joueurs/{{ joueur.id }}">
-      <span class="badge">{{ joueur.id }}</span> {{ joueur.surnom }}
-    </a>
-  </li>
-</ul>

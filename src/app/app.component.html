@@ -1,11 +1,27 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
-  <h1>
-    {{ title }} !
-  </h1>
+  <h1>{{ title }} !</h1>
 </div>
 <nav>
-  <a [routerLink]="['/']" routerLinkActive="router-link-active" >Home</a>
-  <a [routerLink]="['/joueurs']" routerLinkActive="router-link-active">Joueurs</a>
+  <mat-toolbar color="primary">
+      <span>
+        <a [routerLink]="['/']" routerLinkActive="router-link-active"
+          ><mat-icon>home</mat-icon>Home</a
+        >
+      </span>
+      <span>
+        <a [routerLink]="['/joueurs']" routerLinkActive="router-link-active"
+          ><mat-icon>face</mat-icon>Joueurs</a
+        >
+      </span>
+
+    <button mat-icon-button [mat-menu-trigger-for]="menu">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+  </mat-toolbar>
+  <mat-menu x-position="before" #menu="matMenu">
+    <button mat-menu-item>Option 1</button>
+    <button mat-menu-item>Option 2</button>
+  </mat-menu>
 </nav>
 <router-outlet></router-outlet>

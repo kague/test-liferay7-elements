@@ -1,27 +1,6 @@
-$primary-color: #369;
-$secondary-color: #444;
-$third-color: #888;
-$font-stack:    Arial, Helvetica, sans-serif;
-
-h1 {
-  color: $primary-color;
-  font-family: $font-stack;
-  font-size: 250%;
-}
-h2,h3{
-  color: $secondary-color;
-  font-family: $font-stack;
-  font-weight: lighter;
-}
-body {
-  margin: 2em;
-}
-
-body,input[type="text"], button {
-  color: $third-color;
-  font-family: Cambria, Georgia;
-}
-
-* {
-  font-family: $font-stack;
+mat-toolbar {
+  justify-content: space-between;
+  a {
+    color: azure;
+  }
 }
